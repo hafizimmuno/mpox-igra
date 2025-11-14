@@ -54,8 +54,15 @@ The analysis uses:
 - matplotlib  
 - seaborn  
 
-Install via:
+---
 
-```bash
-pip install pandas scipy matplotlib seaborn
+## License
 
+This repository is open-source under the MIT License.
+
+---
+
+## Contact
+
+For questions or collaboration:
+hafiz-hassan.ahmad@etu.univ-lyon1.fr
