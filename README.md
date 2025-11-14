@@ -1,25 +1,61 @@
-# mpox-igra
-Python pipeline for IGRA optimization in Mpox vaccine responses (IFN-γ cytokine data) – Master's thesis, ITM Antwerp
 # Mpox IGRA Optimization Pipeline
 
-Master's thesis project at ITM Antwerp (Jan–Jul 2025): Optimized Interferon-Gamma Release Assay (IGRA) for monitoring T-cell responses to MVA-BN Mpox vaccination.
+Python workflow developed as part of a research project at the Institute of Tropical Medicine (ITM), Antwerp, focused on optimizing an Interferon-Gamma Release Assay (IGRA) to evaluate T-cell responses following MVA-BN (Mpox) vaccination.
 
-## Summary
-- n=14 participants (6 vaccinated, 8 controls)
-- IFN-γ levels: Median 0.19 IU/mL (vaccinated) vs 0.00 IU/mL (controls), p=0.04
-- Optimized: Lithium heparin anticoagulant + 1 μg/mL orthopox peptide pool
-- Code: Python for data analysis and visualization
+---
 
-## Files
-- `igrascript.py`: Python code for data analysis, cutoff optimization, and figure generation (uses pandas, scipy, seaborn, matplotlib)
-- `figure1.png`: Boxplot of IFN-γ response pre/post-vaccination
-- `figure2.png`: Optimization curve for anticoagulant and peptide concentration
+## Project Overview
+This repository contains a small, self-contained analysis pipeline demonstrating:
 
-## Methods
-- PBMC isolation, ELISA for IFN-γ
-- Statistical analysis: Mann-Whitney U test
-- Code availability: Open-source under MIT License
+- Data cleaning and preprocessing (IFN-γ ELISA values)  
+- Statistical comparison between groups  
+- Cutoff exploration  
+- Plot generation for IGRA response visualization  
 
-Preprint: Ahmad, H.H. et al. (2025). Optimizing IGRA for Mpox vaccine monitoring. bioRxiv (submitted)
+The project uses anonymized example data derived from a methodological IGRA optimization study performed during a Master’s thesis (Jan–Jul 2025).
 
-Contact: hafiz-hassan.ahmad@etu.univ-lyon1.fr
+---
+
+## Files Included
+
+**`igrascript.py`**  
+Python script demonstrating:
+
+- Data import and structure  
+- Basic statistical workflow (e.g., non-parametric testing)  
+- Visualization using boxplots and simple line graphs  
+- Export of figures (`figure1.png`, `figure2.png`)
+
+**`figure1.png`**  
+Example visualization of IFN-γ responses.
+
+**`figure2.png`**  
+Example optimization curve exploring assay parameters.
+
+---
+
+## Methods Summary
+
+- **Assay:** Interferon-Gamma Release Assay (IGRA)  
+- **Cytokine measurement:** IFN-γ ELISA  
+- **Sample type:** Whole blood / PBMC stimulation  
+- **Statistics:** Non-parametric tests (e.g., Mann–Whitney U)
+
+The code is provided for demonstration and reproducibility purposes.
+
+---
+
+## Environment & Dependencies
+The analysis uses:
+
+- Python 3.9+  
+- pandas  
+- scipy  
+- matplotlib  
+- seaborn  
+
+Install via:
+
+```bash
+pip install pandas scipy matplotlib seaborn
+
