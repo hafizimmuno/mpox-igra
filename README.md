@@ -32,6 +32,10 @@ Example visualization of IFN-γ responses.
 **`figure2.png`**  
 Example optimization curve exploring assay parameters.
 
+Peptide Concentration Behavior
+
+During antigen stimulation assays, peptide-specific IFN-γ responses typically follow a non-linear pattern. Increases in peptide concentration enhance T-cell activation up to an optimal point (here ~1.0 µg/mL). Beyond this dose, stimulation may decline due to antigen oversaturation, reduced T-cell receptor signaling efficiency, or early exhaustion-like effects. This “high-dose hook” or “prozone-like” behavior is commonly observed in functional T-cell assays and is illustrated in the peptide titration curve included in this pipeline
+
 ---
 
 ## Methods Summary
