@@ -1,72 +1,95 @@
-# Mpox IGRA Optimization Pipeline
+Mpox IGRA Optimization Pipeline
 
-Python workflow developed as part of a research project at the Institute of Tropical Medicine (ITM), Antwerp, focused on optimizing an Interferon-Gamma Release Assay (IGRA) to evaluate T-cell responses following MVA-BN (Mpox) vaccination.
+Python-based workflow developed as part of a research project at the Institute of Tropical Medicine (ITM), Antwerp, focused on optimizing an Interferon-Gamma Release Assay (IGRA) to evaluate T-cell responses following MVA-BN Mpox vaccination.
 
----
+Project Overview
 
-## Project Overview
-This repository contains a small, self-contained analysis pipeline demonstrating:
+This repository contains a self-contained analysis pipeline demonstrating:
 
-- Data cleaning and preprocessing (IFN-γ ELISA values)  
-- Statistical comparison between groups  
-- Cutoff exploration  
-- Plot generation for IGRA response visualization  
+Cleaning and preprocessing of IFN-γ ELISA values
 
-The project uses anonymized example data derived from a methodological IGRA optimization study performed during a Master’s thesis (Jan–Jul 2025).
+Statistical comparison between vaccinated vs. non-vaccinated individuals
 
----
+Exploration of IGRA cutoff values
 
-## Files Included
+Generation of figures for visualization
 
-**`igrascript.py`**  
-Python script demonstrating:
+A simplified demonstration dataset for reproducibility
 
-- Data import and structure  
-- Basic statistical workflow (e.g., non-parametric testing)  
-- Visualization using boxplots and simple line graphs  
-- Export of figures (`figure1.png`, `figure2.png`)
+The dataset is anonymized and derived from a methodological IGRA optimization study performed during a Master's thesis (Jan–Jul 2025).
 
-**`figure1.png`**  
-Example visualization of IFN-γ responses.
+Repository Contents
 
-**`figure2.png`**  
-Example optimization curve exploring assay parameters.
+igrascript.py
+Core analysis script including:
+
+Data import and structure
+
+Preprocessing and filtering
+
+Non-parametric statistical testing (Mann–Whitney U)
+
+Visualization (boxplots, dose-response curves)
+
+Export of figures (figure1.png, figure2.png)
+
+figure1.png
+Example visualization showing IFN-γ responses between study groups.
+
+figure2.png
+Peptide titration curve illustrating the optimal antigen stimulation dose.
 
 Peptide Concentration Behavior
 
-During antigen stimulation assays, peptide-specific IFN-γ responses typically follow a non-linear pattern. Increases in peptide concentration enhance T-cell activation up to an optimal point (here ~1.0 µg/mL). Beyond this dose, stimulation may decline due to antigen oversaturation, reduced T-cell receptor signaling efficiency, or early exhaustion-like effects. This “high-dose hook” or “prozone-like” behavior is commonly observed in functional T-cell assays and is illustrated in the peptide titration curve included in this pipeline
+In antigen-specific stimulation assays, peptide-driven IFN-γ responses usually increase with rising concentration until reaching an optimal dose (here ~1.0 µg/mL).
+Beyond this point, responses may decline due to:
 
----
+Oversaturation of T-cell receptors
 
-## Methods Summary
+Reduced signaling efficiency
 
-- **Assay:** Interferon-Gamma Release Assay (IGRA)  
-- **Cytokine measurement:** IFN-γ ELISA  
-- **Sample type:** Whole blood / PBMC stimulation  
-- **Statistics:** Non-parametric tests (e.g., Mann–Whitney U)
+Early functional exhaustion
 
-The code is provided for demonstration and reproducibility purposes.
+This "high-dose hook effect" is commonly observed in ELISpot, ICS, and IGRA-type functional assays.
+The titration curve in this repository demonstrates this non-linear behavior.
 
----
+Methods Summary
 
-## Environment & Dependencies
-The analysis uses:
+Assay: Interferon-Gamma Release Assay (IGRA)
 
-- Python 3.9+  
-- pandas  
-- scipy  
-- matplotlib  
-- seaborn  
+Readout: IFN-γ ELISA
 
----
+Sample type: Whole blood or PBMC stimulation
 
-## License
+Statistics: Mann–Whitney U and related non-parametric tests
 
-This repository is open-source under the MIT License.
+Language: Python
 
----
+Installation
+git clone https://github.com/hafizimmuno/mpox-igra
+cd mpox-igra
+pip install -r requirements.txt
 
-## Contact
+Running the Script
+python igrascript.py
 
-For questions or collaboration:
-hafiz-hassan.ahmad@etu.univ-lyon1.fr
+
+Outputs:
+
+figure1.png — IFN-γ comparison between groups
+
+figure2.png — Peptide dose–response curve
+
+Figures are saved automatically in the project directory.
+
+Requirements
+
+See requirements.txt for the full list of dependencies.
+
+License
+
+Released under the MIT License — free for academic and scientific use.
+
+Contact
+
+For questions or collaboration: hafiz-hassan.ahmad@etu.univ-lyon1.fr
