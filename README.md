@@ -1,96 +1,63 @@
-# **Mpox IGRA Optimization Pipeline**
+# Mpox IGRA Optimization Pipeline
 
-Python-based workflow developed as part of a research project at the **Institute of Tropical Medicine (ITM), Antwerp**, focused on optimizing an **Interferon-Gamma Release Assay (IGRA)** to evaluate T-cell responses following **MVA-BN Mpox vaccination**.
+Python workflow developed as part of a research project at the **Institute of Tropical Medicine (ITM)**, Antwerp, focused on optimizing an Interferon-Gamma Release Assay (IGRA) to evaluate T-cell responses following MVA-BN (Mpox) vaccination.
 
----
+## Project Overview
 
-## **Project Overview**
+This repository contains a small, self-contained analysis pipeline demonstrating:
 
-This repository contains a self-contained analysis pipeline demonstrating:
+- Data cleaning and preprocessing (IFN-γ ELISA values)
+- Statistical comparison between groups
+- Cutoff exploration
+- Plot generation for IGRA response visualization
 
-- Cleaning and preprocessing of IFN-γ ELISA values  
-- Statistical comparison between vaccinated vs. non-vaccinated individuals  
-- Exploration of IGRA cutoff values  
-- Generation of publication-style figures  
-- A simplified demonstration dataset for reproducibility  
+The project uses anonymized example data derived from a methodological IGRA optimization study performed during a Master’s thesis (Jan–Jul 2025).
 
-The dataset is anonymized and derived from a methodological IGRA optimization study performed during a Master's thesis (Jan–Jul 2025).
+## Files Included
 
----
+- **`igrascript.py`**  
+  Main Python script demonstrating:
+  - Data import and structure
+  - Basic statistical workflow (e.g., non-parametric testing)
+  - Visualization using boxplots and simple line graphs
+  - Export of figures (`figure1.png`, `figure2.png`)
 
-## **Repository Contents**
+- **`figure1.png`**  
+  Example visualization of IFN-γ responses.
 
-### **1. `igrascript.py`**
-Core analysis script including:
+- **`figure2.png`**  
+  Example optimization curve exploring assay parameters.
 
-- Data import and structure  
-- Preprocessing and filtering  
-- Non-parametric statistical testing (e.g., Mann–Whitney U)  
-- Visualization (boxplots, dose-response curves)  
-- Export of figures (`figure1.png`, `figure2.png`)
+## Peptide Concentration Behavior
 
-### **2. `figure1.png`**
-Example visualization showing IFN-γ responses between study groups.
+During antigen stimulation assays, peptide-specific IFN-γ responses typically follow a non-linear pattern. Increases in peptide concentration enhance T-cell activation up to an optimal point (here ~1.0 µg/mL). Beyond this dose, stimulation may decline due to antigen oversaturation, reduced T-cell receptor signaling efficiency, or early exhaustion-like effects. This “high-dose hook” or “prozone-like” behavior is commonly observed in functional T-cell assays and is illustrated in the peptide titration curve included in this pipeline.
 
-### **3. `figure2.png`**
-Peptide titration curve illustrating the optimal antigen stimulation dose.
+## Methods Summary
 
----
+- **Assay**: Interferon-Gamma Release Assay (IGRA)
+- **Cytokine measurement**: IFN-γ ELISA
+- **Sample type**: Whole blood / PBMC stimulation
+- **Statistics**: Non-parametric tests (e.g., Mann–Whitney U)
 
-## **Peptide Concentration Behavior**
+The code is provided for demonstration and reproducibility purposes.
 
-In antigen-specific stimulation assays, peptide-driven IFN-γ responses usually increase with rising concentration until reaching an optimal dose (here ~1.0 µg/mL).  
-Beyond this point, responses may decline due to:
+## Environment & Dependencies
 
-- Oversaturation of T-cell receptors  
-- Reduced signaling efficiency  
-- Early functional exhaustion  
+The analysis requires:
 
-This **“high-dose hook effect”** is commonly observed in ELISpot, ICS, and IGRA-type functional assays.  
-The provided titration curve demonstrates this non-linear behavior.
-
----
-
-## **Methods Summary**
-
-- **Assay:** Interferon-Gamma Release Assay (IGRA)  
-- **Readout:** IFN-γ ELISA  
-- **Sample type:** Whole blood or PBMC stimulation  
-- **Statistics:** Mann–Whitney U and related non-parametric tests  
-- **Language:** Python  
-
----
-
-## **Installation**
-
-```bash
-git clone https://github.com/hafizimmuno/mpox-igra
-cd mpox-igra
-pip install -r requirements.txt
-
-
-## Outputs
-
-- `figure1.png` — IFN-γ comparison between groups  
-- `figure2.png` — Peptide dose–response curve  
-
-Figures are automatically saved in the project directory.
-
----
-
-## Requirements
-
-See `requirements.txt` for the full list of dependencies.
-
----
+- Python 3.9+
+- pandas
+- scipy
+- matplotlib
+- seaborn
 
 ## License
 
-Released under the **MIT License** — free for academic and scientific use.
-
----
+This repository is open-source under the [MIT License](LICENSE).
 
 ## Contact
 
-For questions or collaboration: **hafiz-hassan.ahmad@etu.univ-lyon1.fr**
+For questions or collaboration:  
+[hafiz-hassan.ahmad@etu.univ-lyon1.fr](mailto:hafiz-hassan.ahmad@etu.univ-lyon1.fr)
+
 
