@@ -68,13 +68,6 @@ git clone https://github.com/hafizimmuno/mpox-igra
 cd mpox-igra
 pip install -r requirements.txt
 
-## **Running the Script**
-
-```bash
-python igrascript.py
-
-Running the Script
-python igrascript.py
 
 ## Outputs
 
